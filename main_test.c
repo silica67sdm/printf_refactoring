@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   main_test.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/18 22:02:20 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/20 16:37:44 by sajeon           ###   ########.fr       */
+/*   Created: 2021/02/20 16:57:10 by sajeon            #+#    #+#             */
+/*   Updated: 2021/02/20 16:57:17 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-#include "libft/libft.h"
+// 테스트용 함수.
+#include <stdio.h>
+#include "ft_printf.h"
 
-int ft_printf(void);
-
-#endif
+int main(void)
+{
+	ft_printf();
+	return (0);
+}

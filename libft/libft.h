@@ -6,14 +6,13 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 15:07:35 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/18 22:29:55 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/20 16:59:51 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
