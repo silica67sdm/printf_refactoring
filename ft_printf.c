@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 21:50:39 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/23 20:37:38 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/23 21:29:11 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,6 +155,7 @@ void	print_char(char k, t_info *info)
 		ft_putchar_fd(k, 1);
 		info->char_count += 1;
 	}
+	// printf("****%d****", info->char_count);
 }
 
 int		ft_printf(const char *input, ...)
@@ -162,7 +163,9 @@ int		ft_printf(const char *input, ...)
 	va_list	args_pt;
 	int		i;
 	t_info	info;
+	int sum_count;
 
+	sum_count = 0;
 	i = 0;
 	va_start(args_pt, input);
 	while (input[i])
@@ -179,7 +182,8 @@ int		ft_printf(const char *input, ...)
 			info.char_count += 1;
 		}
 		i++;
+		sum_count += info.char_count;
 	}
 	va_end(args_pt);
-	return (info.char_count);
+	return (sum_count);
 }
