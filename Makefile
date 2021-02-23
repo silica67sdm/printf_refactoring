@@ -6,7 +6,7 @@
 #    By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/20 14:27:57 by sajeon            #+#    #+#              #
-#    Updated: 2021/02/20 16:48:00 by sajeon           ###   ########.fr        #
+#    Updated: 2021/02/23 14:49:15 by sajeon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,6 @@ test: re
 	gcc main_test.c -o main_test libftprintf.a
 	./main_test
 
-test_remove: fclean
+test_clean: fclean
 	rm -rf main_test
 	rm -rf ft_printf.h.gch

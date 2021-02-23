@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 22:02:20 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/20 17:21:23 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/23 15:12:04 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct s_info
     int char_count;
 }              t_info;
 
-int	ft_printf(const char *input, ...);
+int	    ft_printf(const char *input, ...);
+int	    flag_parse(const char *input, int i, t_info *info, va_list args);
+t_info	init_info(t_info info);
 
 #endif
