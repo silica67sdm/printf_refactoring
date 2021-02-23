@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 21:50:39 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/23 18:14:26 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/23 20:37:38 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,52 @@ int		flag_parse(const char *input, int i, t_info *info, va_list args_pt)
 	return (i);
 }
 
+void	print_and_cal_input(t_info *info, va_list args_pt, char type)
+{
+	if (type == 'c')
+		print_char(va_arg(args_pt, int), info);
+	// else if (type == 's')
+	// 	print_string(va_arg(args_pt, char *), info);
+	// else if (type == 'd' || type == 'i')
+	// 	print_int(va_arg(args_pt, int), info);
+	// else if (type == 'u')
+	// 	print_usigned_int(va_arg(args_pt, unsigned int), info);
+	// else if (type == 'x' || type == 'X')
+	// 	print_hexa(va_arg(args_pt, unsigned int), type, info);
+	// else if (type == 'p')
+	// 	print_pointer(va_arg(args_pt, unsigned long long), info);
+	// else if (type == '%')
+	// 	print_percent(info);
+}
+
+void	cal_width(t_info *info, int input_len)
+{
+	int fill_type;
+
+	fill_type = info->zero ? '0' : ' ';
+	while (info->width - input_len > 0)
+	{
+		ft_putchar_fd(fill_type, 1);
+		info->char_count += 1;
+		info->width -= 1;
+	}
+}
+
+void	print_char(char k, t_info *info)
+{
+	if (info->minus == 1)
+	{
+		ft_putchar_fd(k, 1);
+		info->char_count += 1;
+	}
+	cal_width(info, 1);
+	if (info->minus == 0)
+	{
+		ft_putchar_fd(k, 1);
+		info->char_count += 1;
+	}
+}
+
 int		ft_printf(const char *input, ...)
 {
 	va_list	args_pt;
@@ -125,18 +171,12 @@ int		ft_printf(const char *input, ...)
 		if (input[i] == '%' && input[i + 1])
 		{
 			i = flag_parse(input, ++i, &info, args_pt);
-			// print_and_cal_input(&info, args_pt);
-			printf("info.zero: %d\n", info.zero);
-			printf("info.minus: %d\n", info.minus);
-			printf("info.dot: %d\n", info.dot);
-			printf("info.width: %d\n", info.width);
-			printf("info.type: %c\n", (char)info.type);
-			printf("info.char_count: %d\n", info.char_count);
+			print_and_cal_input(&info, args_pt, info.type);
 		}
 		else
 		{
 			ft_putchar_fd(input[i], 1);
-			info.char_count++;
+			info.char_count += 1;
 		}
 		i++;
 	}
