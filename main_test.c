@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:57:10 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/24 11:56:28 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/24 12:20:44 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int main(void)
 {
 	// ft_printf("[%5c]", 'a');
-	ft_printf("[%-46.32s]", "hello my name is");
+	ft_printf("[hello, %s]", "gavin");
 
 	// puts("--------------------------\n");
 	// // printf("%05.32d");

@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 13:16:58 by sajeon            #+#    #+#             */
-/*   Updated: 2020/12/30 20:14:51 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/24 21:58:00 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen(const char *s)
 	size_t cnt;
 
 	cnt = 0;
+	if (!s)
+		return (0);
 	while (s[cnt])
 		cnt++;
 	return (cnt);
