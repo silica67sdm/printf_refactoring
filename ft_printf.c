@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 21:50:39 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/23 21:29:11 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/24 12:04:31 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,8 +115,8 @@ void	print_and_cal_input(t_info *info, va_list args_pt, char type)
 {
 	if (type == 'c')
 		print_char(va_arg(args_pt, int), info);
-	// else if (type == 's')
-	// 	print_string(va_arg(args_pt, char *), info);
+	else if (type == 's')
+	 	print_string(va_arg(args_pt, char *), info);
 	// else if (type == 'd' || type == 'i')
 	// 	print_int(va_arg(args_pt, int), info);
 	// else if (type == 'u')
@@ -156,6 +156,39 @@ void	print_char(char k, t_info *info)
 		info->char_count += 1;
 	}
 	// printf("****%d****", info->char_count);
+}
+
+void	print_string(char *str, t_info *info)
+{
+	int d_len;
+	int s_len;
+	int prec;
+	int i;
+
+	d_len = info->dot;
+	s_len = (int)ft_strlen(str);
+	//printf("***s_len: %d***", s_len);
+	prec = s_len >= d_len ? d_len : s_len;
+	i = 0;
+	if (info->minus == 1)
+	{
+		while (i < prec)
+		{
+			ft_putchar_fd(str[i], 1);
+			info->char_count += 1;
+			i++;
+		}
+	}
+	cal_width(info, prec);
+	if (info->minus == 0)
+	{
+		while (i < prec)
+		{
+			ft_putchar_fd(str[i], 1);
+			info->char_count += 1;
+			i++;
+		}
+	}
 }
 
 int		ft_printf(const char *input, ...)
