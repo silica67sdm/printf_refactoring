@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 21:50:39 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/24 21:47:38 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/25 01:26:42 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,13 +164,14 @@ void	print_string(char *str, t_info *info)
 	int s_len;
 	int prec;
 	int i;
+	
 
+	if (str == NULL)
+		str = "(null)";
 	s_len = (int)ft_strlen(str);
 	d_len = info->dot < 0 ? s_len : info->dot;
 	prec = s_len >= d_len ? d_len : s_len;
 	i = 0;
-	if (str == NULL)
-		str = "(null)";
 	if (info->minus == 1)
 	{
 		while (i < prec)
