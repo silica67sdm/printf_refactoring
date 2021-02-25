@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 21:50:39 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/25 15:48:39 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/25 15:55:57 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,8 +117,8 @@ void	print_and_cal_input(t_info *info, va_list args_pt, char type)
 		print_char(va_arg(args_pt, int), info);
 	else if (type == 's')
 	 	print_string(va_arg(args_pt, char *), info);
-	else if (type == 'd' || type == 'i')
-		print_int(va_arg(args_pt, int), info);
+	// else if (type == 'd' || type == 'i')
+	// 	print_int(va_arg(args_pt, int), info);
 	// else if (type == 'u')
 	// 	print_usigned_int(va_arg(args_pt, unsigned int), info);
 	// else if (type == 'x' || type == 'X')
@@ -136,7 +136,7 @@ void	cal_width(t_info *info, int input_len)
 	fill_type = info->zero ? '0' : ' ';
 	while (info->width - input_len > 0)
 	{
-		put_char_count(fill_type, &info);
+		put_char_count(fill_type, info);
 		info->width -= 1;
 	}
 }
@@ -144,10 +144,10 @@ void	cal_width(t_info *info, int input_len)
 void	print_char(char k, t_info *info)
 {
 	if (info->minus == 1)
-		put_char_count(k, &info);
+		put_char_count(k, info);
 	cal_width(info, 1);
 	if (info->minus == 0)
-		put_char_count(k, &info);
+		put_char_count(k, info);
 }
 
 void	print_string(char *str, t_info *info)
@@ -164,12 +164,18 @@ void	print_string(char *str, t_info *info)
 	prec = s_len >= d_len ? d_len : s_len;
 	i = 0;
 	if (info->minus == 1)
-		while (i++ < prec)
-			put_char_count(str[i], &info);
+		while (i < prec)
+		{
+			put_char_count(str[i], info);
+			i++;
+		}
 	cal_width(info, prec);
 	if (info->minus == 0)
-		while (i++ < prec)
-			put_char_count(str[i], &info);
+		while (i < prec)
+		{
+			put_char_count(str[i], info);
+			i++;
+		}
 }
 
 void	put_char_count(int k, t_info *info)
