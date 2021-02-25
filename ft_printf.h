@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 22:02:20 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/24 11:40:32 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/25 15:46:19 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	print_and_cal_input(t_info *info, va_list args_pt, char type);
 void	cal_width(t_info *info, int input_len);
 void	print_char(char k, t_info *info);
 void	print_string(char *str, t_info *info);
+void	put_char_count(int k, t_info *info);
 int	    ft_printf(const char *input, ...);
 
 #endif
