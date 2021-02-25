@@ -6,13 +6,18 @@
 #    By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/20 14:27:57 by sajeon            #+#    #+#              #
-#    Updated: 2021/02/23 14:49:15 by sajeon           ###   ########.fr        #
+#    Updated: 2021/02/25 21:12:49 by sajeon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 TARGET = libftprintf.a
 
-SRCS = ft_printf.c
+SRCS = ft_printf.c \
+		flag_parse_util.c \
+		global_util.c \
+		print_char.c \
+		print_int.c \
+		print_string.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -41,6 +46,7 @@ test: re
 	gcc main_test.c -o main_test libftprintf.a
 	./main_test
 
+# 테스트 클리너 명령어.
 test_clean: fclean
 	rm -rf main_test
 	rm -rf ft_printf.h.gch
