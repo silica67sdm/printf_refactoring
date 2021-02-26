@@ -6,7 +6,7 @@
 #    By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/20 14:27:57 by sajeon            #+#    #+#              #
-#    Updated: 2021/02/26 21:08:24 by sajeon           ###   ########.fr        #
+#    Updated: 2021/02/26 22:35:20 by sajeon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,12 +45,10 @@ fclean: clean
 
 re: fclean all
 
-# 라이브러리 테스트용 타겟 명령어.
 test: re
 	gcc main_test.c -o main_test libftprintf.a
 	./main_test
 
-# 테스트 클리너 명령어.
 test_clean: fclean
 	rm -rf main_test
 	rm -rf ft_printf.h.gch

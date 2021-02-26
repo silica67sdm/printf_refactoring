@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 21:50:39 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/26 21:08:06 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/26 22:20:37 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,17 +81,15 @@ void	print_and_cal_input(t_info *info, va_list args_pt, char type)
 	if (type == 'c')
 		print_char(va_arg(args_pt, int), info);
 	else if (type == 's')
-	 	print_string(va_arg(args_pt, char *), info);
+		print_string(va_arg(args_pt, char *), info);
 	else if (type == 'd' || type == 'i')
 		print_int(va_arg(args_pt, int), info);
 	else if (type == 'u')
-	 	print_unsigned_int(va_arg(args_pt, unsigned int), info);
+		print_unsigned_int(va_arg(args_pt, unsigned int), info);
 	else if (type == 'x' || type == 'X')
-	 	print_hex(va_arg(args_pt, unsigned int), info, info->type);
+		print_hex(va_arg(args_pt, unsigned int), info, info->type);
 	else if (type == 'p')
-	 	print_pointer(va_arg(args_pt, unsigned long long), info);
+		print_pointer(va_arg(args_pt, unsigned long long), info);
 	else if (type == '%')
-	 	print_percent(info);
+		print_percent(info);
 }
-
-
