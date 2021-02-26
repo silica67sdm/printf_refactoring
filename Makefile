@@ -6,7 +6,7 @@
 #    By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/20 14:27:57 by sajeon            #+#    #+#              #
-#    Updated: 2021/02/26 20:15:08 by sajeon           ###   ########.fr        #
+#    Updated: 2021/02/26 21:08:24 by sajeon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCS = ft_printf.c \
 		print_unsigned_int.c \
 		print_string.c \
 		print_pointer.c \
+		print_percent.c \
 		print_hex.c
 
 OBJS = $(SRCS:.c=.o)
