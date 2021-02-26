@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 22:02:20 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/25 20:07:15 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/26 14:45:42 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	cal_width(t_info *info, int len1, int len2, int zero);
 void	print_char(char k, t_info *info);
 void	print_string(char *str, t_info *info);
 void	print_int(int n, t_info *info);
+void	print_unsigned_int(unsigned int n, t_info *info);
 void	put_char_count(int k, t_info *info);
 int	    ft_printf(const char *input, ...);
 
