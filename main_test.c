@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:57:10 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/26 14:56:36 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/26 20:40:27 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 
 int main(void)
 {
+	int pt = 1;
 	// ft_printf("[%5c]", 'a');
 	ft_printf("[hello, %s]", "gavin");
-	printf("***\n\n**** %s ****\n\n****", ft_itoa(4294967295));
+	printf("\n[pt address: %p]\n", &pt);
+	ft_printf("\n[%p]\n", &pt);
 	// puts("--------------------------\n");
 	// // printf("%05.32d");
 	// ft_printf("%05.32d", 300);

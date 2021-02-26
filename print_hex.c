@@ -6,7 +6,7 @@
 /*   By: sajeon </var/mail/sajeon>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 16:09:29 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/26 19:55:21 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/26 20:58:23 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static char *hex_base_change(unsigned int n, char *base)
 	return (rst);
 }
 
-static void print_unsigned_int_indent(t_info *info, int max_len)
+static void print_hex_indent(t_info *info, int max_len)
 {
 	if (info->zero && !info->minus && info->dot < 0)
 		cal_width(info, info->width, max_len, 1);
@@ -46,7 +46,7 @@ static void print_unsigned_int_indent(t_info *info, int max_len)
         cal_width(info, info->width, max_len, 0);
 }
 
-static void print_padd_unsigned_int(char *str_n, t_info *info)
+static void print_padd_hex(char *str_n, t_info *info)
 {
     int i;
 
@@ -77,9 +77,9 @@ void	print_hex(unsigned int n, t_info *info, char type)
         return ;
     }
     if (info->minus == 0)
-        print_unsigned_int_indent(info, max_len);
-    print_padd_unsigned_int(str_n, info);
+        print_hex_indent(info, max_len);
+    print_padd_hex(str_n, info);
     if (info->minus == 1)
-        print_unsigned_int_indent(info, max_len);
+        print_hex_indent(info, max_len);
 	free(str_n);
 }

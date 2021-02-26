@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 22:02:20 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/26 19:52:50 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/26 20:13:52 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	print_string(char *str, t_info *info);
 void	print_int(int n, t_info *info);
 void	print_unsigned_int(unsigned int n, t_info *info);
 void	print_hex(unsigned int n, t_info *info, char type);
+void	print_pointer(unsigned long long n, t_info *info);
 void	put_char_count(int k, t_info *info);
 int	    ft_printf(const char *input, ...);
 
