@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 21:50:39 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/26 14:22:09 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/26 19:53:32 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ void	print_and_cal_input(t_info *info, va_list args_pt, char type)
 		print_int(va_arg(args_pt, int), info);
 	else if (type == 'u')
 	 	print_unsigned_int(va_arg(args_pt, unsigned int), info);
-	// else if (type == 'x' || type == 'X')
-	// 	print_hexa(va_arg(args_pt, unsigned int), type, info);
+	else if (type == 'x' || type == 'X')
+	 	print_hex(va_arg(args_pt, unsigned int), info, info->type);
 	// else if (type == 'p')
 	// 	print_pointer(va_arg(args_pt, unsigned long long), info);
 	// else if (type == '%')
