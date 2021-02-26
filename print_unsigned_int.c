@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 14:09:50 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/26 22:35:04 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/26 23:15:46 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void		print_unsigned_int(unsigned int n, t_info *info)
 
 	str_n = ft_unsigned_itoa(n);
 	num_len = (int)ft_strlen(str_n);
-	max_len = (info->dot >= (int)ft_strlen(str_n)) ? info->dot : num_len;
+	max_len = (info->dot >= num_len) ? info->dot : num_len;
 	if (info->dot == 0 && n == 0)
 	{
 		cal_width(info, info->width, 0, 0);

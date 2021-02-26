@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 16:09:29 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/26 22:28:17 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/26 23:14:15 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void		print_hex(unsigned int n, t_info *info, char type)
 	else if (type == 'X')
 		str_n = hex_base_change(n, "0123456789ABCDEF");
 	num_len = (int)ft_strlen(str_n);
-	max_len = (info->dot >= (int)ft_strlen(str_n)) ? info->dot : num_len;
+	max_len = (info->dot >= num_len) ? info->dot : num_len;
 	if (info->dot == 0 && n == 0)
 	{
 		cal_width(info, info->width, 0, 0);
