@@ -6,7 +6,7 @@
 /*   By: sajeon <sajeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 21:03:08 by sajeon            #+#    #+#             */
-/*   Updated: 2021/02/25 21:40:34 by sajeon           ###   ########.fr       */
+/*   Updated: 2021/02/26 14:00:28 by sajeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,14 @@ static void print_padd_int(char *str_n, int n, t_info *info, int except)
     if (n < 0 && !except)
     {
         put_char_count('-', info);
-        n *= -1;
         info->dot += 1;
         i++;
     }
     if (except && n < 0)
         i++;
-    if (info->dot < (int)ft_strlen(str_n))
-        while (i < (int)ft_strlen(str_n))
-            put_char_count(str_n[i++], info);
-    else
-    {
-        cal_width(info, info->dot, (int)ft_strlen(str_n), 1);
-        while (i < (int)ft_strlen(str_n))
-            put_char_count(str_n[i++], info);
-    }
+    cal_width(info, info->dot, (int)ft_strlen(str_n), 1);
+    while (i < (int)ft_strlen(str_n))      
+		put_char_count(str_n[i++], info);
 }
 
 void	print_int(int n, t_info *info)
